@@ -30,7 +30,7 @@ class lotteryPicture {
     if(this.y < this.yTarget-1){
       this.y += (this.yTarget-this.y)/pictureSpeed;
     }else if(lotteryAlive){
-      for(let i=0;i<10;i++){
+      for(let i=0;i<5;i++){
         shootFirework();
       }
       lotteryAlive = false;

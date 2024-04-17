@@ -2,14 +2,25 @@
 const PICTURE_COUNT = 180;
 // 設定顯示圖片數量(會影響到網頁載入速度)
 const TOTAL_DISPLAY_IMAGE_COUNT = 30;
+
 var result;
 var pictures=[];
+
+// 電腦介面最寬顯示比例
 var viewWidthRatio = 9;
-var viewHeightRatio = 18;
+var viewHeightRatio = 16;
+
 var viewWidth, viewHeight;
+
+// 圖片滾動速度的倒數
 var pictureSpeed = 32;
+
 const DEBUG_MODE = false;
 
+//圖片間距
+var pictureMargin = 10;
+
+// 視覺效果相關參數，勿動
 let a = 0;
 let aspeed = 1;
 let b = 128;
@@ -22,8 +33,8 @@ class lotteryPicture {
     this.picture = picture;
     this.index = index;
     this.x =(windowWidth-pictureSize)/2;
-    this.y =(viewHeight-pictureSize)/2-(viewWidth-10)*(TOTAL_DISPLAY_IMAGE_COUNT-(index-1));
-    this.yTarget = (viewHeight-pictureSize)/2+(viewWidth-10)*(index-1);
+    this.y =(viewHeight-pictureSize)/2-(viewWidth-pictureMargin)*(TOTAL_DISPLAY_IMAGE_COUNT-(index-1));
+    this.yTarget = (viewHeight-pictureSize)/2+(viewWidth-pictureMargin)*(index-1);
     this.ySpeed=10;
   }
   update() {
@@ -57,7 +68,7 @@ function preload() {
     viewWidth = windowWidth;
     viewHeight = windowHeight;
   }
-  pictureSize = viewWidth -20;
+  pictureSize = viewWidth - pictureMargin * 2;
   j=0;
   if (startindex <= 0) {
     // 載入圖片

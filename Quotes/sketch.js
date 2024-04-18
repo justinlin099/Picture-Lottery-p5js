@@ -73,17 +73,17 @@ function preload() {
   if (startindex <= 0) {
     // 載入圖片
     for (let i = startindex+180; i <= 180; i++) {
-      pictures.push(new lotteryPicture(loadImage("/Picture-Lottery-p5js/image/" + str(i) + ".png"),j));
+      pictures.push(new lotteryPicture(loadImage("/Picture-Lottery-p5js/Quotes/image/" + str(i) + ".png"),j));
       j++;
     }
     for (let i = 1; i < endindex; i++) {
-      pictures.push(new lotteryPicture(loadImage("/Picture-Lottery-p5js/image/" + str(i) + ".png"),j));
+      pictures.push(new lotteryPicture(loadImage("/Picture-Lottery-p5js/Quotes/image/" + str(i) + ".png"),j));
       j++;
     }
   }else{
     // 載入圖片
     for (let i = startindex; i < endindex; i++) {
-      pictures.push(new lotteryPicture(loadImage("/Picture-Lottery-p5js/image/" + str(i) + ".png"),j));
+      pictures.push(new lotteryPicture(loadImage("/Picture-Lottery-p5js/Quotes/image/" + str(i) + ".png"),j));
       j++;
     }
   }

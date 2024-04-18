@@ -58,7 +58,11 @@ class lotteryPicture {
 function preload() {
   // 決定抽到的圖片編號
   result=int(random(PICTURE_COUNT));
-  console.log("result="+result);
+  if(result-29<=0){
+    console.log("result="+result-29+180);
+  }else{
+    console.log("result="+result-29);
+  }
   let startindex = result-TOTAL_DISPLAY_IMAGE_COUNT;
   let endindex = result;
   if (windowWidth > windowHeight) {
